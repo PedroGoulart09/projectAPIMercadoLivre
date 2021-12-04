@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="./helpers/fetchItem.js" defer></script>
+  <script src="./helpers/fetchProducts.js" defer></script>
+  <script src="./helpers/saveCartItems.js" defer></script>
+  <script src="./helpers/getSavedCartItems.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header id="header">
+    <h2 class="title-trybe">trybe</h2>
+    <h2 class="title-shopping">shopping</h2>
+    <img src="carrinhos-de-compras.png" alt="carrinho de compra" id="icone-compra">
+    <h2 class="meu-carrinho">Meu carrinho</h2>
+  </header>
+  <section class="container">
+    <section class="items"></section>
+    <section class="cart">
+      <p class="total-price"></p>
+      <span class="cart__title">Carrinho de compras</span>
+      <button class="empty-cart">Esvaziar carrinho</button>
+      <ol class="cart__items"></ol>
+    </section>
+  </section>
+</body>
+
+</html>

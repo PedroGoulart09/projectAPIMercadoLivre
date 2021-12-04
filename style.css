@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.items {
+  display: flex;
+  flex-basis: 70%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.item {
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 5px 0px 5px rgb(196, 195, 195);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 5px;
+  width: 200px;
+}
+
+.item .item__sku {
+  display: none;
+}
+
+.item .item__title {
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.item .item__image {
+  width: 100%;
+}
+
+.item .item__add {
+  background-color: blue;
+  color: white;
+  border: 0;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px;
+}
+.item .item__add:hover {
+  background-color: rgb(4, 4, 116);
+}
+
+.cart {
+  display: flex;
+  flex-basis: 30%;
+  flex-flow: column wrap;
+}
+
+.cart .cart__title {
+  flex-basis: 1;
+  font-size: 16pt;
+  text-align: center;
+}
+#header {
+  display: flex;
+  gap: 0.1em;
+  font-size: 18px;
+  background-color: rgb(10, 49, 8);
+}
+.title-trybe {
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 50px;
+  color: white;
+}
+.title-shopping {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(211, 206, 206);
+}
+#icone-compra {
+  margin-left: 55em;
+  width: 5vw;
+}
+.meu-carrinho {
+  color: white;
+  margin-left: 120px;
+  margin-top: 35px;
+  font-size: 32px;
+  font-weight: 500px;
+  font-family: "Courier New", Courier, monospace;
+}
+.item__title {
+  font-family: "Poppins", sans-serif;
+}
+.empty-cart {
+  background-color: green;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid green;
+  border-radius: 3px;
+  box-shadow: 3px 2px 5px rgb(1, 146, 1);
+  color: white;
+  margin-top: 10px;
+  margin-left: 185px;
+  padding: 10px;
+  width: 10vw;
+}
+.cart__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}
+.empty-cart:hover {
+  background-color: rgb(8, 160, 8);
+}
