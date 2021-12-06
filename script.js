@@ -28,17 +28,17 @@ const createProductItemElement = ({ sku, name, image }) => {
 };
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerHTML;
 
-
 const arrayValue = [];
 const createCartItemElement = ({ id: sku, title: name, price: salePrice, thumbnail: imagem }) => {
   arrayValue.push(salePrice);
   total = arrayValue.reduce((acc, value) => acc + value, 0);
-  totalTxt.innerHTML = total.toFixed(2);
+  totalTxt.innerHTML = `Subtotal: R$ ${total}`;
   const olCarrinhoDeCompra = document.querySelector(classCart);
   const li = document.createElement('li');
   li.className = 'cart__item';
-  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  li.innerText = ` ${sku},  ${name}, Preço: $${salePrice}`;
   const createImg = document.createElement('img');
+  createImg.className = 'img-carrinho';
   createImg.src = imagem;
   li.appendChild(createImg);
   olCarrinhoDeCompra.appendChild(li);
@@ -74,13 +74,12 @@ const removeElement = () => {
 
 const limparCarrinho = () => {
   const limpar = document.querySelector('.empty-cart');
-  const limparContador = document.querySelector('.total-price')
+  const limparContador = document.querySelector('.total-price');
   const cartItems = document.querySelector(classCart);
   limpar.addEventListener('click', () => {
-    limparContador.innerHTML = '';
+    limparContador.innerHTML = 'Subtotal: R$ 0';
     cartItems.innerHTML = '';
     saveCartItems(cartItems.innerHTML);
-
   });
 };
 
