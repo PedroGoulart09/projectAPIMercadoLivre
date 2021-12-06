@@ -26,18 +26,21 @@ const createProductItemElement = ({ sku, name, image }) => {
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
   sectionPai.appendChild(section);
 };
-const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
+const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerHTML;
+
 
 const arrayValue = [];
-const createCartItemElement = ({ id: sku, title: name, price: salePrice }) => {
+const createCartItemElement = ({ id: sku, title: name, price: salePrice, thumbnail: imagem }) => {
   arrayValue.push(salePrice);
   total = arrayValue.reduce((acc, value) => acc + value, 0);
-  totalTxt.innerHTML = total;
-
+  totalTxt.innerHTML = total.toFixed(2);
   const olCarrinhoDeCompra = document.querySelector(classCart);
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  const createImg = document.createElement('img');
+  createImg.src = imagem;
+  li.appendChild(createImg);
   olCarrinhoDeCompra.appendChild(li);
 
   return li;
@@ -62,7 +65,7 @@ const removeElement = () => {
     if (event.target.matches('.cart__item')) {
       const sub = event.target.innerText.split('$');
       total -= Number(sub[1]);
-      totalTxt.innerHTML = total;
+      totalTxt.innerHTML = total.toFixed(2);
       ol.removeChild(event.target);
       saveCartItems(ol.innerHTML);
     }
@@ -71,9 +74,13 @@ const removeElement = () => {
 
 const limparCarrinho = () => {
   const limpar = document.querySelector('.empty-cart');
+  const limparContador = document.querySelector('.total-price')
   const cartItems = document.querySelector(classCart);
   limpar.addEventListener('click', () => {
+    limparContador.innerHTML = '';
     cartItems.innerHTML = '';
+    saveCartItems(cartItems.innerHTML);
+
   });
 };
 
