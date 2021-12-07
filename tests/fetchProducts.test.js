@@ -18,7 +18,7 @@ describe('Desenvolva testes de no mínimo 25% de cobertura total e 100% da funç
         expect(teste).toEqual(computadorSearch);
     })
     it(' 5 - Teste se, ao chamar a função fetchProducts sem argumento, retorna um erro com a mensagem: You must provide an url. Dica: Lembre-se de usar o new Error("mensagem esperada aqui") para comparar com o objeto retornado da API.', async () => {
-        const teste = await fetchProducts()
-        expect(teste).toEqual(new Error('You must provide an url'));
+        const funcProduts = await fetchProducts()
+        expect(funcProduts).toEqual(new Error('You must provide an url'));
     })
 });
